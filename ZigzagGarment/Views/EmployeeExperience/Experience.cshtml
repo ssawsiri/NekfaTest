@@ -1,0 +1,116 @@
+﻿@model EmployeeExperience
+
+<form method="post" asp-action="AddExperience">
+
+     <div class="pt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">
+                Adding Expeirence to Employee
+            </h2>
+            <hr />
+
+        </div>
+        <div asp-validation-summary="All" class="text-warning">
+        </div>
+        <div class="mb-3">
+            <table class="table-borderless border-2" width="100%">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="20%">
+                            <label asp-for="EmpNo"></label>
+                        </td>
+
+                        <td width="20%">
+                            <input asp-for="EmpNo" class="form-control" readonly />
+                           
+                        </td>
+                        <td width="5%">
+                        </td>
+                        <td width="20%">
+                            <label asp-for="EmpName"></label>
+                        </td>
+                        <td width="20%">
+                            <input asp-for="EmpName" class="form-control" readonly />
+
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <br />
+
+            <table class="table-info table-bordered" width="100%" id="experienceTable">
+                <thead>
+                    <tr>
+                        <th style="text-align: center" width="30%">
+                            Company Name
+                        </th>
+                        <th style="text-align: center" width="20%">
+                            Job Role
+                        </th >
+                        <th style="text-align: center" width="10%">
+                            Start Year
+                        </th>
+                        <th style="text-align: center" width="10%">
+                            End Year
+                        </th>
+                        <th style="text-align: center" width="10%">
+                            Experience Years
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                                           
+                </tbody>
+            </table>
+            <br />
+            <div class="pt-4 text-end">
+                <a onclick="myAddFunction()" class="btn btn-primary" style="width:250px"> <i class="bi bi-plus-circle"></i> &nbsp; Add Experience</a>
+                <a onclick="myRemoveFunction()" class="btn btn-danger" style="width:250px"> <i class="bi bi-plus-circle"></i> Remove Experience</a>
+            </div>
+
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success" style="width:150px"> <i class="bi bi-save"></i> &nbsp; Save</button>
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-secondary" style="width:250px">Back to Employee List</a>
+    </div>
+</form>
+
+<script>
+    function myAddFunction() {
+        var table = document.getElementById("experienceTable");
+        var row = table.insertRow(1);
+        var companyName = row.insertCell(0);
+        var jobRole = row.insertCell(1);
+        var startYear = row.insertCell(2);
+        var endYear = row.insertCell(3);
+        var experience = row.insertCell(4);
+
+        companyName.setAttribute("contenteditable", "true");
+        jobRole.setAttribute("contenteditable", "true");
+        startYear.setAttribute("contenteditable", "true");
+        endYear.setAttribute("contenteditable", "true");
+        experience.setAttribute("contenteditable", "true");
+
+        //companyName.innerHTML = "123";
+        //jobRole.innerHTML = "456";
+        //startYear.innerHTML = "78";
+        //endYear.innerHTML = "9";
+        //experience.innerHTML = "10";
+    }
+
+    function myRemoveFunction() {
+        document.getElementById("experienceTable").deleteRow(1);
+    }
+</script>
+
+@*client side validation*@
+@section Scripts{
+       
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+

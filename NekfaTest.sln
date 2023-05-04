@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZigzagGarment", "ZigzagGarment\ZigzagGarment.csproj", "{1ADB49C5-9CEA-4E6B-821D-2E402507EE00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1ADB49C5-9CEA-4E6B-821D-2E402507EE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ADB49C5-9CEA-4E6B-821D-2E402507EE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ADB49C5-9CEA-4E6B-821D-2E402507EE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ADB49C5-9CEA-4E6B-821D-2E402507EE00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {648E9FD2-1258-4CC7-AAC5-2D4BCAA7E453}
+	EndGlobalSection
+EndGlobal

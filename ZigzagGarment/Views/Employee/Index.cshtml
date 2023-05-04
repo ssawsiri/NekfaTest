@@ -1,0 +1,88 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container pt-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Employees - ZigZag Garments (Pvt) Ltd.
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Employee" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Add New Employee
+            </a>
+          
+        </div>
+        
+       
+    </div>
+    <br />
+    <div class="d-flex">
+        <form class="col-3">
+            <input class="form-control me-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    <br />
+    <br />
+    <table class="table table-bordered table-striped" style="width: 100%">
+        <thead>
+            <tr>
+                <th>
+                    Employee No.
+                </th>
+                <th>
+                    Employee Name
+                </th>
+                <th>
+                    Department
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="10%">
+                        @obj.EmpNo
+                    </td>
+                    <td width="30%">
+                        @obj.EmpName
+                    </td>
+                    <td width="20%">
+                        @obj.Department
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Employee" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i> &nbsp;
+                                Edit
+                            </a>
+                            <a asp-controller="EmployeeExperience" asp-action="Experience" asp-route-empNo="@obj.EmpNo"  class="btn btn-info mx-2">
+                                <i class="bi bi-plus-circle"></i> &nbsp;
+                                Experience
+                            </a>
+                            <a asp-controller="Employee" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                                <i class="bi bi-trash-fill"></i> &nbsp;
+                                Delete
+                            </a>
+
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
